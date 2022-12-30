@@ -6,8 +6,10 @@ ssh "To Your Node Designated as Master"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-#Install containerd
-sudo apt-get install containerd -y
+#Install containerd (doesn't work with k8s 1.25+ https://kubernetes.io/blog/2022/11/18/upcoming-changes-in-kubernetes-1-26/#cri-api-removal)
+#sudo apt-get install containerd -y
+
+#Install containerd as per https://serverfault.com/a/1118343
 
 #Configure containerd and start the service
 sudo mkdir -p /etc/containerd
